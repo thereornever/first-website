@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form Pembelian</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container"> 
+	<h3>Card Premium</h3>
+	<div class="card">
+		<img class="cover" src="imageku.jpg" alt="si lotso">
+
+		<div class="detail-produk">
+			<h4 class="judul">Judul: Lots-o'-Huggin'Bear</h4>
+			<p class="author">Author: Mayang Sari</p>
+			<p class="sinopsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			</p>
+			<p class="harga">Harga: Rp.20.000</p>
+		</div>
+	</div>
+<hr>
+		<ol class="list-instruksi">
+			<li>PDF ini dilengkapi watermark identitas pembeli secara otomatis</li>
+			<li>PDF dikirim otomatis ke Email yang Pembeli input</li>
+	    	<li>Dilarang menggandakan atau menyebarluaskan pdf ini</li> 
+	    </ol>
+
+<hr>
+
+	<form id="buyForm">
+		<div class="form-group">
+			<label>Nama(opsional)</label>
+			<input type="text" id="Nama" placeholder="Nama Anda">
+		</div>
+
+		<div class="form-group">
+		<label>Alamat Email*</label>
+		<input type="Email" id="Email" required placeholder="nama@gmail.com">
+		</div>
+
+		<div class="action-group">
+		<button class="btn-buy" type="Submit">Beli Sekarang</button>
+		</div>
+		
+	</form>
+
+</div>
+
+
+<script>
+	document.getElementById('buyForm').addEventListener('submit', function(event) {
+		event.preventDefault();
+		const namaVal = document.getElementById('Nama').value;
+		const emailVal = document.getElementById('Email').value;
+
+		fetch('/buy', {
+			method: 'POST',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({
+				Nama: namaVal,
+				Email: emailVal
+			})
+		})
+		.then(response => response.json())
+		.then(data => {
+			alert(data.pesan);
+		})
+		.catch(error => {
+			console.error('Error:', error);
+			alert('gagal mengirim data ke backend');
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+body {
+	font-family:initial, sans-serif;
+	background-color: royalblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	background-color: black;
+	padding: 20px;
+	padding-bottom: 10px;
+	border-radius: 20px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	width: 90%;
+	height: 85%;
+	max-width: 450px;
+	margin: auto;
+}
+
+h3 {
+	margin-top: 2px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+}
+
+.card{
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.cover{
+	width: 150px;
+	height: auto;
+	border-radius: 8px;
+}
+
+.detail-produk{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.judul, .author, .harga, .sinopsis{
+	margin: 0;
+	color: white;
+}
+
+.author{
+	font-style: italic;
+	font-size: 0.8rem;
+}
+
+hr{
+	border: 0;
+	border-top: 1px solid #333;
+	margin: 20px 0;
+}
+
+.list-instruksi{
+	font-size: 0.8rem;
+	font-style: italic;
+	font-weight: bold;
+	color: white;
+	line-height: 1.4;
+	margin-bottom: 10px;
+	padding: 6px;
+	padding-left: 20px;
+	border-radius: 6px;
+	border-left: 3px solid white;
+	text-align: left;
+	list-style-position: inside;
+}
+
+.form-group{
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+label {
+	width: 120px;
+	flex-shrink: 0;
+	color: white;
+}
+
+input [type="Email"{
+	flex-grow: 1;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.action-group{
+	display: flex;
+	width: 100%;
+	text-align: center;
+}
+
+.btn-buy {
+	margin-left: auto;
+	padding: 10px 20px;
+	background-color: #fff;
+	color: #000;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	text-align: center;
+}
+
+button.hover{
+	background-color: darkblue;
+}
